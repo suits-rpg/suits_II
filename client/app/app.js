@@ -9,7 +9,8 @@ angular.module('suitsIiApp', [
   'ngSanitize',
   'ui.router',
   'validation.match',
-  'ngMaterial'
+  'ngMaterial',
+  'ngMdIcons'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
