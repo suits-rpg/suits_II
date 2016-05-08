@@ -1,3 +1,8 @@
+<div layout="row" layout-padding layout-align="end center">
+    <md-button class="md-icon-button" aria-label="Close" ng-click="menu.close()">
+        <ng-md-icon icon="close"></ng-md-icon>
+    </md-button>
+</div>
 <md-toolbar class="md-tall md-hue-2" ng-if="menu.isLoggedIn()">
     <span flex></span>
     <div layout="column" class="md-toolbar-tools-bottom inset">
@@ -6,13 +11,14 @@
     </div>
 </md-toolbar>
 <md-list>
-    <md-item ng-repeat="item in menu.menu">
+    <md-item ng-repeat="item in menu.menus()" ng-click="menu.go(item)">
         <a>
-            <md-item-content md-ink-ripple layout="row" layout-align="start center">
+            <md-item-content layout="row" layout-align="start center">
                 <div class="inset">
                     <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
                 </div>
-                <div class="inset"><md-button class="" ng-click="menu.go(item)">{{item.title}}</md-button>
+                <div class="inset">
+                    {{item.title}}
                 </div>
             </md-item-content>
         </a>

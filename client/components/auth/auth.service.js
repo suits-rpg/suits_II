@@ -21,6 +21,7 @@
              * @return {Promise}
              */
             login({email, password}, callback) {
+                var _res;
                 return $http.post('/auth/local', {
                       email: email,
                       password: password
@@ -29,10 +30,11 @@
                       $cookies.put('token', res.data.token);
                       currentUser = User.get();
                       return currentUser.$promise;
+                      _res = res;
                   })
                   .then(user => {
                       if (!user) {
-                          return res.status(401).end();
+                          return _res.status(401).end();
                       }
                       safeCb(callback)(null, user);
                       return user;

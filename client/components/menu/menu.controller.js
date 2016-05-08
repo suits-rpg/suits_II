@@ -26,18 +26,30 @@ const menus = [
 ];
 
 class MenuController {
-
-    isCollapsed = true;
-    //end-non-standard
-
-    constructor(Auth, $state) {
+    constructor(Auth, $state, $mdSidenav) {
         console.log('menu auth:', Auth);
         this.isLoggedIn = Auth.isLoggedIn;
         this.isAdmin = Auth.isAdmin;
         this.getCurrentUser = Auth.getCurrentUser;
-        this.menu = menus.filter(item => item.show ? item.show(Auth) : true);
-        this.go = (item) => $state.go(item.link);
+        this.$state = $state;
+        this.$mdSidenav = $mdSidenav;
+        this.Auth = Auth;
     }
+
+    menus () {
+        console.log('getting menus:');
+        return menus.filter(item => item.show ? item.show(this.Auth) : true);
+    }
+
+    close () {
+        this.$mdSidenav('left').close();
+    }
+
+    go (item) {
+        this.$state.go(item.link);
+        this.close();
+    }
+
 }
 
 angular.module('suitsIiApp')
