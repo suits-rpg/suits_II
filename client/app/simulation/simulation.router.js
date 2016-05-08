@@ -7,7 +7,6 @@ angular.module('suitsIIApp.simulation')
         url: '/simulation',
         templateUrl: 'app/simulation/simulation.html',
         controller: 'SimulationController',
-        controllerAs: 'simulation',
-        authenticate: 'simulation'
+        controllerAs: 'simulation'
       });
   });
