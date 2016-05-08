@@ -29,5 +29,5 @@ class LoginController {
   }
 }
 
-angular.module('suitsIiApp')
+angular.module('suitsIIApp')
   .controller('LoginController', LoginController);

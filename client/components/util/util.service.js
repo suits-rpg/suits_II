@@ -59,7 +59,7 @@ function UtilService($window) {
   return Util;
 }
 
-angular.module('suitsIiApp.util')
+angular.module('suitsIIApp.util')
   .factory('Util', UtilService);
 
 })();

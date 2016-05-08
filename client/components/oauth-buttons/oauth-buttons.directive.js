@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('suitsIiApp')
+angular.module('suitsIIApp')
   .directive('oauthButtons', function() {
     return {
       templateUrl: 'components/oauth-buttons/oauth-buttons.html',

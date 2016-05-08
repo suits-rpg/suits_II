@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('suitsIiApp')
+angular.module('suitsIIApp')
   .directive('footer', function() {
       return {
           templateUrl: 'components/footer/footer.html',

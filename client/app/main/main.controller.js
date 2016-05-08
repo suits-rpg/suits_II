@@ -1,36 +1,23 @@
 'use strict';
 
-(function() {
+(function () {
 
-class MainController {
+    class MainController {
+        constructor($state) {
+            this.$state = $state;
+        }
 
-  constructor($http) {
-    this.$http = $http;
-    this.awesomeThings = [];
-  }
-
-  $onInit() {
-    this.$http.get('/api/things').then(response => {
-      this.awesomeThings = response.data;
-    });
-  }
-
-  addThing() {
-    if (this.newThing) {
-      this.$http.post('/api/things', { name: this.newThing });
-      this.newThing = '';
+        go(state) {
+            console.log('going to ', state);
+            this.$state.go(state);
+        }
     }
-  }
 
-  deleteThing(thing) {
-    this.$http.delete('/api/things/' + thing._id);
-  }
-}
-
-angular.module('suitsIiApp')
-  .component('main', {
-    templateUrl: 'app/main/main.html',
-    controller: MainController
-  });
+    angular.module('suitsIIApp')
+      .component('main', {
+          templateUrl: 'app/main/main.html',
+          controller: MainController,
+          controllerAs: 'main'
+      });
 
 })();

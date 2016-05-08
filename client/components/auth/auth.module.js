@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('suitsIiApp.auth', [
-  'suitsIiApp.constants',
-  'suitsIiApp.util',
+angular.module('suitsIIApp.auth', [
+  'suitsIIApp.constants',
+  'suitsIIApp.util',
   'ngCookies',
   'ui.router'
 ])

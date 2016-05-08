@@ -10,5 +10,5 @@ class AppController {
     }
 }
 
-angular.module('suitsIiApp')
+angular.module('suitsIIApp')
   .controller('AppController', AppController);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('suitsIiApp')
+angular.module('suitsIIApp')
   .directive('menu', function () {
       return {
           templateUrl: 'components/menu/menu.html',

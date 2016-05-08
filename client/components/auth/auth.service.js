@@ -216,7 +216,7 @@ const EVENT_USER = 'user';
         return Auth;
     }
 
-    angular.module('suitsIiApp.auth')
+    angular.module('suitsIIApp.auth')
       .factory('Auth', AuthService);
 
 })();

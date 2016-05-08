@@ -1,8 +1,8 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html ng-app="suitsIiApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html ng-app="suitsIiApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html ng-app="suitsIiApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html ng-app="suitsIiApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html ng-app="suitsIIApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html ng-app="suitsIIApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html ng-app="suitsIIApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html ng-app="suitsIIApp" class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body layout="row" ng-controller="AppController as app">
+  <body layout="row" class="md-default-theme" ng-controller="AppController as app">
     <!--[if lt IE 7]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -41,21 +41,13 @@
                     <ng-md-icon icon="menu"></ng-md-icon>
                 </md-button>
                 <h3>
-                    Dashboard
+                    Suits RPG
                 </h3>
                 <span flex></span>
                 <md-button aria-label="Search" ng-click="showSearch = !showSearch">
                     <ng-md-icon icon="search"></ng-md-icon>
                 </md-button>
             </div>
-            <md-tabs md-stretch-tabs class="md-primary" md-selected="data.selectedIndex">
-                <md-tab id="tab1" aria-controls="tab1-content">
-                    Latest
-                </md-tab>
-                <md-tab id="tab2" aria-controls="tab2-content">
-                    Favorites
-                </md-tab>
-            </md-tabs>
         </md-toolbar>
         <md-toolbar class="md-hue-1" ng-show="showSearch">
             <div class="md-toolbar-tools">
@@ -116,6 +108,7 @@
       <script src="app/app.js"></script>
       <!-- injector:js -->
       <script src="app/admin/admin.module.js"></script>
+      <script src="app/simulation/simulation.module.js"></script>
       <script src="components/auth/auth.module.js"></script>
       <script src="components/util/util.module.js"></script>
       <script src="app/account/account.js"></script>
@@ -127,6 +120,8 @@
       <script src="app/app.constant.js"></script>
       <script src="app/main/main.controller.js"></script>
       <script src="app/main/main.js"></script>
+      <script src="app/simulation/simulation.controller.js"></script>
+      <script src="app/simulation/simulation.router.js"></script>
       <script src="components/app/app.controller.js"></script>
       <script src="components/auth/auth.service.js"></script>
       <script src="components/auth/interceptor.service.js"></script>

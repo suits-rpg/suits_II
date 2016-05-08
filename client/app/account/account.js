@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('suitsIiApp')
+angular.module('suitsIIApp')
   .config(function($stateProvider) {
     $stateProvider
       .state('login', {

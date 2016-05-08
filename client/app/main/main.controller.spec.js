@@ -3,7 +3,7 @@
 describe('Component: mainComponent', function() {
 
   // load the controller's module
-  beforeEach(module('suitsIiApp'));
+  beforeEach(module('suitsIIApp'));
   beforeEach(module('stateMock'));
 
   var scope;

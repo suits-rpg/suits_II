@@ -3,7 +3,7 @@
 /**
  * Removes server error when user updates input
  */
-angular.module('suitsIiApp')
+angular.module('suitsIIApp')
   .directive('mongooseError', function() {
     return {
       restrict: 'A',

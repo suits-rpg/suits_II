@@ -1,5 +1,5 @@
 (function(angular, undefined) {
-  angular.module("suitsIiApp.constants", [])
+  angular.module("suitsIIApp.constants", [])
 
 .constant("appConfig", {
 	"userRoles": [

@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('suitsIiApp.util', []);
+angular.module('suitsIIApp.util', []);

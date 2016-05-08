@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('suitsIiApp')
+angular.module('suitsIIApp')
   .directive('navbar', () => ({
     templateUrl: 'components/navbar/navbar.html',
     restrict: 'E',

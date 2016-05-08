@@ -17,5 +17,5 @@ class NavbarController {
   }
 }
 
-angular.module('suitsIiApp')
+angular.module('suitsIIApp')
   .controller('NavbarController', NavbarController);

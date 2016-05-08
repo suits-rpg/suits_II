@@ -25,5 +25,5 @@ class SettingsController {
   }
 }
 
-angular.module('suitsIiApp')
+angular.module('suitsIIApp')
   .controller('SettingsController', SettingsController);

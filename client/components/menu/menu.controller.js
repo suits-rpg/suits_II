@@ -53,5 +53,5 @@ class MenuController {
 
 }
 
-angular.module('suitsIiApp')
+angular.module('suitsIIApp')
   .controller('MenuController', MenuController);

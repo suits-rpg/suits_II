@@ -14,7 +14,7 @@ class AdminController {
   }
 }
 
-angular.module('suitsIiApp.admin')
+angular.module('suitsIIApp.admin')
   .controller('AdminController', AdminController);
 
 })();

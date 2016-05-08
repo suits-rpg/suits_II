@@ -21,7 +21,7 @@ function UserResource($resource) {
   });
 }
 
-angular.module('suitsIiApp.auth')
+angular.module('suitsIIApp.auth')
   .factory('User', UserResource);
 
 })();

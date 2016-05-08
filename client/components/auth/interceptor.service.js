@@ -26,7 +26,7 @@ function authInterceptor($rootScope, $q, $cookies, $injector, Util) {
   };
 }
 
-angular.module('suitsIiApp.auth')
+angular.module('suitsIIApp.auth')
   .factory('authInterceptor', authInterceptor);
 
 })();
