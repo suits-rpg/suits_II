@@ -1,5 +1,7 @@
 'use strict';
 
+const EVENT_USER = 'user';
+
 (function () {
 
     function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
@@ -11,7 +13,17 @@
             currentUser = User.get();
         }
 
+        var ee = new EventEmitter2();
+
         var Auth = {
+            onUser(listener) {
+                ee.on(EVENT_USER, listener);
+                listener(currentUser);
+            },
+
+            offUser(listener) {
+                ee.off(EVENT_USER, listener);
+            },
 
             /**
              * Authenticate user and save token
@@ -36,6 +48,7 @@
                       if (!user) {
                           return _res.status(401).end();
                       }
+                      Auth.setCurrentUser(user);
                       safeCb(callback)(null, user);
                       return user;
                   })
@@ -51,7 +64,7 @@
              */
             logout() {
                 $cookies.remove('token');
-                currentUser = {};
+                Auth.setCurrentUser({});
             },
 
             /**
@@ -65,7 +78,7 @@
                 return User.save(user,
                   function (data) {
                       $cookies.put('token', data.token);
-                      currentUser = User.get();
+                      Auth.setCurrentUser(User.get());
                       return safeCb(callback)(null, user);
                   },
                   function (err) {
@@ -115,6 +128,21 @@
                       safeCb(callback)({});
                       return {};
                   });
+            },
+
+            setCurrentUser(user) {
+                if (!user) {
+                    user = {};
+                }
+                currentUser = user;
+
+                if (user.$promise) {
+                    user.$promise.then(() => {
+                        ee.emit(EVENT_USER, user);
+                    });
+                } else {
+                    ee.emit(EVENT_USER, user);
+                }
             },
 
             /**

@@ -3,6 +3,7 @@
  */
 
 'use strict';
+require('bluebird').config( { warnings: { wForgottenReturn: false } } );
 
 import express from 'express';
 import mongoose from 'mongoose';

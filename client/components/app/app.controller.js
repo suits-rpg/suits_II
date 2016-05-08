@@ -6,7 +6,6 @@ class AppController {
     }
 
     toggleSideNav(menuId) {
-        console.log('toggling nav for ', menuId);
         this.$mdSidenav(menuId).toggle();
     }
 }

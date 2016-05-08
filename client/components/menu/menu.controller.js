@@ -26,19 +26,20 @@ const menus = [
 ];
 
 class MenuController {
-    constructor(Auth, $state, $mdSidenav) {
-        console.log('menu auth:', Auth);
+    constructor(Auth, $state, $mdSidenav, $scope) {
         this.isLoggedIn = Auth.isLoggedIn;
         this.isAdmin = Auth.isAdmin;
         this.getCurrentUser = Auth.getCurrentUser;
         this.$state = $state;
         this.$mdSidenav = $mdSidenav;
         this.Auth = Auth;
-    }
+        
+        const updateMenu = angular.bind(this, () => {
+            this.menus =  menus.filter(item => item.show ? item.show(Auth) : true);
+        });
 
-    menus () {
-        console.log('getting menus:');
-        return menus.filter(item => item.show ? item.show(this.Auth) : true);
+        Auth.onUser(updateMenu);
+        $scope.$on('$destroy', () => Auth.offUser(updateMenu));
     }
 
     close () {

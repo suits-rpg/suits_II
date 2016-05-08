@@ -2,6 +2,7 @@
 
 import crypto from 'crypto';
 import mongoose from 'mongoose';
+require('bluebird').config( { warnings: { wForgottenReturn: false } } );
 mongoose.Promise = require('bluebird');
 import {Schema} from 'mongoose';
 
